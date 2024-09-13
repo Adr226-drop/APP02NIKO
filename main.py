@@ -1,22 +1,9 @@
-import flet as ft
-
-
-def main(page: ft.Page):
-    page.title = "Suma y Resta UwU"
-    page.bgcolor="white"
-    page.horizontal_alignment=ft.CrossAxisAlignment.CENTER
-    page.vertical_alignment=ft.MainAxisAlignment.CENTER
-    
-    lbl1=ft.Text("Primer Número",
-                style=ft.TextStyle(size=40,weight="bold"))
-    
-    img1=ft.Image(scr="diavlo.png",width=200,height=200)
-    
-    btnSumar=ft.
-    
-
-
-
-
-
-ft.app(main)
+def calcular_suma( txt_num1, txt_num2, txt_resultado):
+    try:
+        num1 = float(txt_num1.value.strip())
+        num2 = float(txt_num2.value.strip())
+        resultado = num1 + num2
+        txt_resultado.value = f"Resultado: {resultado}"
+    except ValueError:
+        txt_resultado.value = "Error: Ingresa valores correctos"
+        
